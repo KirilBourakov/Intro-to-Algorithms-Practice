@@ -31,7 +31,5 @@ def mergeSort(items, s=0,e=None):
         final = [items[e]]
     return final
 
-x = [12, 6, 7, 15, 42, 0, 1, 8]
-print(mergeSort(x))
 
 # Create version to use insertion sort of small array

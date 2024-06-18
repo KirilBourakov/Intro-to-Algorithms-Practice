@@ -13,6 +13,3 @@ def selectionSort(items):
         items[i], items[smallest[1]] = items[smallest[1]], items[i]
         i -= 1
     return final
-
-x = [12, 6, 7, 15, 42, 0, 1, 8]
-print(selectionSort(x))
