@@ -4,6 +4,7 @@ from algorithm.insertion import insertionSort
 from algorithm.merge import mergeSort
 from algorithm.selection import selectionSort
 from algorithm.heap import heapSort
+from algorithm.quick import quickSort
 
 def main(length):
     test = tester.Tester(length)
@@ -11,5 +12,6 @@ def main(length):
     test.time(mergeSort)
     test.time(insertionSort)
     test.timeClass(heapSort)
+    test.timeClass(quickSort, 0)
 
 main(int(sys.argv[1]))

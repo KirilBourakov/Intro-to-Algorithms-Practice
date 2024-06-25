@@ -17,10 +17,13 @@ class Tester:
         print(f"{sorting_func} --- Ran in %s seconds ---" % (time.time() - start_time))
         assert  final == sorted(self.to_sort)
     
-    def timeClass(self, className):
+    def timeClass(self, className, *args):
         self.generate()
         obj = className(self.to_sort)
         start_time = time.time()
-        obj.sort()
+        if len(args) > 0:
+            obj.sort(*args)
+        else:
+            obj.sort()
         print(f"{obj} --- Ran in %s seconds ---" % (time.time() - start_time))
         assert  obj.getItems() == sorted(self.to_sort)
