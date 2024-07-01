@@ -9,6 +9,9 @@ class Tester:
     
     def generate(self):
         self.to_sort = helpers.active_generator(self.num)
+    
+    def limitedGenerate(self):
+        self.to_sort = helpers.limited_generator(self.num)
 
     def time(self, sorting_func):
         self.generate()
@@ -25,5 +28,13 @@ class Tester:
             obj.sort(*args)
         else:
             obj.sort()
+        print(f"{obj} --- Ran in %s seconds ---" % (time.time() - start_time))
+        assert  obj.getItems() == sorted(self.to_sort)
+    
+    def timeClassLimRange(self, className):
+        self.limitedGenerate()
+        obj = className(self.to_sort)
+        start_time = time.time()
+        obj.sort()
         print(f"{obj} --- Ran in %s seconds ---" % (time.time() - start_time))
         assert  obj.getItems() == sorted(self.to_sort)

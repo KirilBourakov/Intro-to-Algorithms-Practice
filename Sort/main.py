@@ -7,6 +7,7 @@ from algorithm.heap import heapSort
 from algorithm.quick import quickSort
 from algorithm.counting import countingSort
 from algorithm.radix import radixSort
+from algorithm.bucket import bucketSort
 
 def main(length):
     test = tester.Tester(length)
@@ -17,5 +18,6 @@ def main(length):
     test.timeClass(quickSort, 0)
     test.timeClass(countingSort)
     test.timeClass(radixSort)
+    test.timeClassLimRange(bucketSort)
 
 main(int(sys.argv[1]))
